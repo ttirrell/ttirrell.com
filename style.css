@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+    html {
+    font-size: 62.5%; /* This makes 1rem = 10px */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Use rem units for responsive typography */
+  h1 {
+    font-size: 4rem; /* This is equivalent to 40px */
+  }
+  
+  p {
+    font-size: 1.6rem; /* This is equivalent to 16px */
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: auto;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: .8rem;
+  }
