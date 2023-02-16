@@ -1,0 +1,32 @@
+[  
+    {    
+        "title": "First Blog Post",
+        "content": "Lorem ipsum dolor sit amet...",
+        "date": "January 1, 2022",   
+        "author": "John Doe", 
+        "thumbnail": "path/to/thumbnail/image1.jpg",   
+        "mainCategory": "Technology",
+        "subCategories": ["Programming", "Web Development"],
+        "excerpt": "Brief excerpt of first blog post"  
+    },  
+    {    
+        "title": "The Future of AI",
+        "content": "Lorem ipsum dolor sit amet...",
+        "date": "February 1, 2022",    
+        "thumbnail": "path/to/thumbnail/image2.jpg",            
+        "author": "Jane Smith",
+        "mainCategory": "Technology",
+        "subCategories": ["Artificial Intelligence", "Machine Learning"],
+        "excerpt": "Brief excerpt of second blog post",
+    },  
+    {    
+        "title": "10 Tips for Starting a Business",
+        "content": "Lorem ipsum dolor sit amet...",
+        "date": "2023-02-10",
+        "thumbnail": "path/to/thumbnail/image3.jpg",    
+        "author": "John Smith",
+        "mainCategory": "Business",
+        "subCategories": ["Entrepreneurship", "Startup"],
+        "excerpt": "Brief excerpt of third blog post"  
+    }
+]

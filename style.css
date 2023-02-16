@@ -1,32 +1,175 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-    html {
-    font-size: 62.5%; /* This makes 1rem = 10px */
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Use rem units for responsive typography */
-  h1 {
-    font-size: 4rem; /* This is equivalent to 40px */
-  }
-  
-  p {
-    font-size: 1.6rem; /* This is equivalent to 16px */
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: auto;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: .8rem;
-  }
+/* Set basic styles for the page */
+html, body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;  
+  height: 100%;
+}
+
+/* Style the header section */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;  
+  padding: 0 100px 0 100px;
+  flex-shrink: 0;
+}
+
+h4 {
+  float: left;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+  float: right;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li:last-child {
+  margin-right: 0;  
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #548dd4;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  margin-right: 0px;
+  margin-top: 12px;
+  padding: 0px;
+  border: 1px solid #ccc;
+  width: 185px; 
+}
+
+.dropdown {  
+  position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+  color: #fff;
+  display: block;
+  top: 100%;  
+  left: 0;
+  visibility: visible;
+  transition-delay: .4s;
+}
+
+#dropdown-menuitem:hover {
+  color: black;
+  background-color: #548dd4;
+  display: block;
+  top: 100%;
+  left: 50;
+  margin-right: 0px;
+}
+
+/* Style the main section */
+main {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;  
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section li {
+  margin-bottom: 10px;
+}
+
+section a {
+  color: #333;
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.post:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post .post-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.post .post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.post .post-excerpt {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.post .post-meta {
+  font-size: 14px;
+  color: #666666;
+  margin-top: auto;
+}
+
+/* Style the footer section */
+footer {
+  line-height: .5;
+  background-color: #333;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  flex-shrink: 0;
+}

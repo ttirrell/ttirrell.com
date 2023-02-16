@@ -1,31 +1,65 @@
-// Define a global namespace object to avoid polluting the global scope
-var StaticWebApp = StaticWebApp || {};
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
 
-// Use an immediately-invoked function expression (IIFE) to encapsulate your code
-(function() {
-  "use strict"; // Use strict mode to avoid common errors
+  fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+  
+  window.onload = function() {
+    const blogPostsContainer = document.querySelector('.blog-posts-container');
+  
+    fetch('blog-posts.json')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(post => {
+          const postHTML = `
+            <div class="blogPost">
+              <div class="blogPostThumbnail">
+                <img src="${post.thumbnail}" alt="Thumbnail Image">
+              </div>
+              <div class="blogPostDetails">
+                <h2 class="blogPostTitle">${post.title}</h2>
+                <p class="blogPostDate">${post.date}</p>
+                <p class="blogPostExcerpt">${post.excerpt}</p>
+                <a href="${post.url}" class="blogPostReadMore">Read More</a>
+              </div>
+            </div>
+          `;
+          blogPostsContainer.innerHTML += postHTML;
+        });
+      });
+  };
 
-  // Define some constants or variables that you need
-  var PI = Math.PI;
-  var message = "Hello World!";
-
-  // Define some functions that you need
-  function square(x) {
-    return x * x;
+class BlogPost {
+  constructor(title, content, date, author, mainCategory, subCategories) {
+    this.title = title;
+    this.content = content;
+    this.date = date;
+    this.author = author;
+    this.mainCategory = mainCategory;
+    this.subCategories = subCategories;
   }
+};
 
-  function greet(name) {
-    console.log(message + " " + name);
-  }
+const dropdowns = document.querySelectorAll(".dropdown");
 
-  // Expose some properties or methods to the global namespace object
-  StaticWebApp.PI = PI;
-  StaticWebApp.square = square;
-  StaticWebApp.greet = greet;
+dropdowns.forEach((dropdown) => {
+  const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+  let timeoutId;
 
-})();
+  dropdown.addEventListener("mouseenter", () => {
+    clearTimeout(timeoutId);
+    dropdownMenu.style.display = "block";
+  });
 
-// Use the global namespace object to access your properties or methods
-console.log(StaticWebApp.PI); // Prints 3.141592653589793
-console.log(StaticWebApp.square(5)); // Prints 25
-StaticWebApp.greet("John"); // Prints Hello World! John
+  dropdown.addEventListener("mouseleave", () => {
+    timeoutId = setTimeout(() => {
+      dropdownMenu.style.display = "none";
+    }, 5000); // Delay in milliseconds
+  });
+});
